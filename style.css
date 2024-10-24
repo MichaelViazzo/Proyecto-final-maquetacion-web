@@ -1,0 +1,288 @@
+/* NORMALIZACION:  */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*esto mantiene el ancho y alto a pesar de padding y margin*/
+    font-family: 'Roboto Mono' ;
+    list-style: none; /* quitar los puntos y decoracion de las listas*/
+   text-decoration: none; /*esto quita el subrayado de los enlaces */
+background-color:transparent;
+color: white;
+}
+
+header{
+    position: fixed; /*esto hace que el header se quede fijo en la parte de arriba*/
+    right: 0;
+    top: 0;
+    z-index: 100; /* esto hace que el header se muestre por encima*/
+    width: 100%; /* quiero que ocupe todo */
+    display: flex; /*  esto hara que los elementos se pongas en linea*/
+    align-items: center ; /*  centra verticalmente */
+    justify-content: space-between; /* hace que los elementos se separen */
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 700;
+    background-color: #012409;
+}
+
+.nav-list{
+    display: flex; /* esto sirve para que se alineen los elementos*/
+    
+}
+
+.nav-list a{
+    margin-left: 60px; /* esto es para separar las palabras */ 
+    font-size: 15px;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s ease ;
+}
+
+.nav-list a:hover{
+    border-bottom: 2px solid white; /* esto es para que cuando estoy encima pase de borde transparente a blanco  */
+
+  
+}
+
+#menu-icon{
+      display: none; /*none para que se vea solo cuando se colapsa la pagina */
+}
+
+#menu-icon{
+    color: white;
+    font-size: 30px;
+    z-index: 101;
+    cursor: pointer; /*para que se ponga la manito*/
+
+}
+#menu-toggle{
+    display: none; /*no quiero que se vea nunca*/
+
+}
+
+.menu-icon-action{
+    display: none; /* para que no se pueda hacer click */
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg,#69f186 0%, #36c255 25%, #044612 75%, #012409 95%); /* fondo degradado*/
+    position: relative; /*para poder mover libre*/
+    display: grid;/* para que el hero se pueda dividir en dos columnas*/
+    grid-template-columns: 1fr 1fr; /* las dos columnas*/
+    align-items: center; /* alinear vertivalmente el hero*/
+    gap: 2rem; /* haya espacio entre las dos columnas*/
+}
+
+section{
+    padding: 80px;
+    
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+
+}
+
+.hero-text h4{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.hero-text h1{
+    font-family: 'Roboto';
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+.hero-text p{
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+
+}
+
+.hero-img img{
+    width:300px;
+    height: auto ;
+    border: 4px solid white ;
+    border-radius: 1000px;
+    margin: 10% 0 0 10%;
+    transition:  all .5s linear;
+}
+ 
+.hero-img img:hover{
+    width: 350px;
+    opacity: 0.6;
+}
+
+.hero-text a{
+    display: inline-block; /*permite darle ancho y alto*/
+    background-color: #041303;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 300px;
+    text-transform: uppercase;
+    transition: all .5s ease ;
+
+}
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px); /*esto es para que se muevan 8px en el eje x*/
+
+}
+
+.hero-text a.video{
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.video i{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icons{
+  position: absolute;  
+  top: 50vh;
+  padding: 0 3%;
+  transform: translateY(-50%);
+}
+
+.icons i{
+ display: block;   
+ margin: 26px 0;
+ font-size: 20px;
+ transition: all .5s ease;
+}
+
+.icons i:hover{
+    color: grey;
+}
+
+.scroll{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+
+}
+
+.scroll i{
+    display: block;
+    padding: 12px;
+    font-size: 35px;
+    transition: all .5s ease;
+}
+
+.scroll i:hover{
+    transform: translateY(-5px);
+}
+
+
+/* ACA VAMOS A HACER PARA QUE SE PUEDA VER DE UN CELULAR Y TABLET SIN ROMPERSE */
+
+@media(max-width:992px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .icons{
+        display: none;
+    }
+
+    .hero-text{
+
+        padding-top: 0;
+    }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        
+        margin: 10% 0 0 10%;
+
+    }
+
+    .hero-text p{
+        font-size: 75%;
+    }
+    .scroll{
+        display: none;
+    }
+
+} 
+  
+
+/* ESTA VA A SER PARA CELULAR */
+
+@media(max-width:768px){
+    .menu-icon-action{
+display: block;
+    }
+
+    #menu-icon{
+        display: block;
+        background-color: #041303;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+
+    }
+
+    .hero-img img{
+        margin: 0;
+
+    }
+
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .nav-list{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #020c01d7;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5s ease;
+
+    }
+
+    .nav-list a{
+        margin: 7px 0;
+        display: block;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + .nav-list{
+        right: 0;
+    }
+
+
+
+
+}
